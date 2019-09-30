@@ -20,10 +20,13 @@ class MainActivity : AppCompatActivity() {
     private val person = Person("")
     private var animal = Animal("동물")
     private var mIntent: Intent? = null
+    private var mApplicationKt: ApplicationKt? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        mApplicationKt = application as ApplicationKt
+
         requestPermissions()
 
         textView.text = animal.name
