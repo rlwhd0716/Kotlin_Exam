@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
@@ -27,11 +28,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".TiltSensorActivity"/>
-        <activity android:name=".VideoPlayActivity"/>
-        <activity android:name=".StopWatchActivity"/>
+        <activity android:name=".example.TiltSensorActivity"/>
+        <activity android:name=".mqtt.VideoPlayActivity"/>
+        <activity android:name=".example.StopWatchActivity"/>
         <activity
-                android:name=".FatCalcActivity"
+                android:name=".example.FatCalcActivity"
                 android:parentActivityName=".MainActivity"/>
         <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>

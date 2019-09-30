@@ -1,8 +1,9 @@
-package kr.com.rlwhd.kotlinexample
+package kr.com.rlwhd.kotlinexample.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_fat_calc.*
+import kr.com.rlwhd.kotlinexample.R
 import org.jetbrains.anko.toast
 
 class FatCalcActivity : AppCompatActivity() {

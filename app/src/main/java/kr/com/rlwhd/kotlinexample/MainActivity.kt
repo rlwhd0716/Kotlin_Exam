@@ -8,9 +8,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
-import kr.com.rlwhd.kotlinexample.example.Animal
-import kr.com.rlwhd.kotlinexample.example.Dog
-import kr.com.rlwhd.kotlinexample.example.Person
+import kr.com.rlwhd.kotlinexample.example.*
+import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
 import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {

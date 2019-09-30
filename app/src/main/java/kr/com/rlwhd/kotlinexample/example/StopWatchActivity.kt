@@ -1,10 +1,10 @@
-package kr.com.rlwhd.kotlinexample
+package kr.com.rlwhd.kotlinexample.example
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_stop_watch.*
-import org.w3c.dom.Text
+import kr.com.rlwhd.kotlinexample.R
 import java.util.*
 import kotlin.concurrent.timer
 

@@ -1,5 +1,6 @@
 package kr.com.rlwhd.kotlinexample
 
+import android.Manifest
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.Application
@@ -7,6 +8,10 @@ import android.app.ProgressDialog
 import android.app.Service
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.pm.PackageManager
+import android.provider.Settings
+import android.telephony.TelephonyManager
+import androidx.core.app.ActivityCompat
 
 class ApplicationKt : Application() {
     val TAG: String? = this.javaClass.simpleName
@@ -15,6 +20,8 @@ class ApplicationKt : Application() {
     private var editor: SharedPreferences.Editor? = null
 
     private var mProgressDialog: ProgressDialog? = null
+    private val mTelephonyManager: TelephonyManager? = null
+
 
     @SuppressLint("CommitPrefEdits")
     override fun onCreate() {
@@ -23,15 +30,19 @@ class ApplicationKt : Application() {
         editor = pref!!.edit()
     }
 
-//    fun getIMEI(): String{
-//        if (ActivityCompat.checkSelfPermission(
-//                this,
-//                Manifest.permission.READ_PHONE_STATE
-//            ) !== PackageManager.PERMISSION_GRANTED
-//        ) {
-//        }
-//        return mTelephonyManager.getDeviceId()
-//    }
+    /**
+     * GET IMEI
+     * Created by Jongsuuu on 2019-06-10
+     */
+    @SuppressLint("HardwareIds")
+    fun getIMEI(): String {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.READ_PHONE_STATE
+            ) !== PackageManager.PERMISSION_GRANTED
+        ){}
+        return Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
+    }
 
 
     /**
