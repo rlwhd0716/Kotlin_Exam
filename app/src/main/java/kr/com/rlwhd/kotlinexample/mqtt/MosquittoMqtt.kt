@@ -1,21 +1,22 @@
 package kr.com.rlwhd.kotlinexample.mqtt
 
+import android.app.Activity
 import android.content.Context
 import android.util.Log
-import kr.com.rlwhd.kotlinexample.adapter.VideoPlayAdapter
+import kr.com.rlwhd.kotlinexample.adapter.MqttMessageAdapter
 import kr.com.rlwhd.kotlinexample.data.MqttData
 import org.eclipse.paho.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
 
 
-class MosquittoMqtt(c: Context, activity: VideoPlayActivity) {
+class MosquittoMqtt(c: Context, activity: Activity) {
     private val TAG: String? = this.javaClass.simpleName
 
     // 2번째 파라메터 : 브로커의 ip 주소 , 3번째 파라메터 : client 의 id를 지정함 여기서는 paho 의 자동으로 id를 만들어주는것
-    val mqttAndroidClient = MqttAndroidClient(c, "tcp://" + "IP" + "Port", MqttClient.generateClientId())
+    val mqttAndroidClient = MqttAndroidClient(c, "tcp://" + "192.168.0.80" + ":1883", MqttClient.generateClientId())
     private var mqttData : MqttData ?= null
     private var msgList = arrayListOf<MqttData>()
-    val mAdapter = VideoPlayAdapter(activity, msgList)
+    val mAdapter = MqttMessageAdapter(activity, msgList)
 
     fun initMqtt() {
         try {

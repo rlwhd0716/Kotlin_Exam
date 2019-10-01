@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_video_play.*
 import kr.com.rlwhd.kotlinexample.ApplicationKt
 import kr.com.rlwhd.kotlinexample.R
-import kr.com.rlwhd.kotlinexample.adapter.VideoPlayAdapter
-import kr.com.rlwhd.kotlinexample.data.MqttData
 import org.eclipse.paho.client.mqttv3.MqttException
 import org.jetbrains.anko.toast
 
@@ -27,12 +25,12 @@ class VideoPlayActivity : AppCompatActivity() {
         mosquittoMqtt = MosquittoMqtt(this, this)
 
         videoPlayer()
-        rv_message.adapter = mosquittoMqtt?.mAdapter
+        rv_message_video.adapter = mosquittoMqtt?.mAdapter
         mosquittoMqtt?.initMqtt() // mqtt 연결
 
         val lm = LinearLayoutManager(this)
-        rv_message.layoutManager = lm
-        rv_message.setHasFixedSize(true)
+        rv_message_video.layoutManager = lm
+        rv_message_video.setHasFixedSize(true)
 
         tv_play.setOnClickListener {
             try {

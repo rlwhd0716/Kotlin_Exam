@@ -7,11 +7,12 @@
         android:layout_height="match_parent"
         tools:context=".mqtt.VideoPlayActivity">
 
-    <kr.com.rlwhd.kotlinexample.util.CustomVideoView
-            android:id="@+id/vv_player"
+    <LinearLayout
+            android:id="@+id/ll_map_rescue"
             android:layout_width="500dp"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
+            android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -25,17 +26,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/vv_player"
+            app:layout_constraintStart_toEndOf="@+id/ll_map_rescue"
             android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_message_video"
+                android:id="@+id/rv_message_rescue"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.9"/>
 
         <TextView
-                android:id="@+id/tv_play"
+                android:id="@+id/tv_tv"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.1"

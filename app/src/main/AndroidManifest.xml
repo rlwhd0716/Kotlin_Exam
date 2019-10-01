@@ -30,6 +30,7 @@
 
         <activity android:name=".example.TiltSensorActivity"/>
         <activity android:name=".mqtt.VideoPlayActivity"/>
+        <activity android:name=".mqtt.RescueMapActivity"/>
         <activity android:name=".example.StopWatchActivity"/>
         <activity
                 android:name=".example.FatCalcActivity"

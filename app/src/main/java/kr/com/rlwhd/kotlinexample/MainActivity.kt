@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.com.rlwhd.kotlinexample.example.*
+import kr.com.rlwhd.kotlinexample.mqtt.RescueMapActivity
 import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
 import org.jetbrains.anko.startActivity
 
@@ -63,6 +64,10 @@ class MainActivity : AppCompatActivity() {
 
         bt_video.setOnClickListener {
             startActivity<VideoPlayActivity>()
+        }
+
+        bt_kakao_map.setOnClickListener {
+            startActivity<RescueMapActivity>()
         }
     }
 

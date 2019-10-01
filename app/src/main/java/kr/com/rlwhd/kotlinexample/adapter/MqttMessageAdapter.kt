@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.com.rlwhd.kotlinexample.R
 import kr.com.rlwhd.kotlinexample.data.MqttData
 
-class VideoPlayAdapter(val context: Context, val msgList: ArrayList<MqttData>): RecyclerView.Adapter<VideoPlayAdapter.Holder>() {
+class MqttMessageAdapter(val context: Context, val msgList: ArrayList<MqttData>): RecyclerView.Adapter<MqttMessageAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_rv_video, parent, false)
         return Holder(view)
