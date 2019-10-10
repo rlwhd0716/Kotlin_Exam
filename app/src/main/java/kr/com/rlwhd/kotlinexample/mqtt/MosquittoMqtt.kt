@@ -13,7 +13,7 @@ class MosquittoMqtt(c: Context, activity: Activity) {
     private val TAG: String? = this.javaClass.simpleName
 
     // 2번째 파라메터 : 브로커의 ip 주소 , 3번째 파라메터 : client 의 id를 지정함 여기서는 paho 의 자동으로 id를 만들어주는것
-    val mqttAndroidClient = MqttAndroidClient(c, "tcp://" + "192.168.0.80" + ":1883", MqttClient.generateClientId())
+    val mqttAndroidClient = MqttAndroidClient(c, "IP" + ":Port", MqttClient.generateClientId())
     private var mqttData : MqttData ?= null
     private var msgList = arrayListOf<MqttData>()
     val mAdapter = MqttMessageAdapter(activity, msgList)
@@ -48,7 +48,6 @@ class MosquittoMqtt(c: Context, activity: Activity) {
     private fun callBack() {
         mqttAndroidClient.setCallback(object : MqttCallback {  //클라이언트의 콜백을 처리하는부분
             override fun connectionLost(cause: Throwable) {
-
             }
 
             @Throws(Exception::class)
@@ -84,7 +83,7 @@ class MosquittoMqtt(c: Context, activity: Activity) {
         val mqttConnectOptions = MqttConnectOptions()
         mqttConnectOptions.isCleanSession = false
         mqttConnectOptions.isAutomaticReconnect = true
-        mqttConnectOptions.setWill("aaa", "I am going offline".toByteArray(), 1, true)
+        mqttConnectOptions.setWill("/TEST", "I am going offline".toByteArray(), 1, true)
         return mqttConnectOptions
     }
 

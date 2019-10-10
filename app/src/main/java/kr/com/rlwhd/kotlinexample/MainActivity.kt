@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.kakao.util.maps.helper.Utility
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.com.rlwhd.kotlinexample.example.*
 import kr.com.rlwhd.kotlinexample.mqtt.RescueMapActivity
@@ -14,6 +15,8 @@ import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
 import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
+    private val TAG: String = this.javaClass.simpleName
+
     var str: String = "버튼을 눌렀습니다."
     private lateinit var v: View
     private val dog = Dog("")
@@ -31,7 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         textView.text = animal.name
         onClickEvent()
+        val hash = Utility.getKeyHash(this)
 
+        Log.e(TAG, "keyHash : $hash")
     }
 
     private fun requestPermissions() {
@@ -70,7 +75,6 @@ class MainActivity : AppCompatActivity() {
             startActivity<RescueMapActivity>()
         }
     }
-
 
 }
 
