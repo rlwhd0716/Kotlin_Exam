@@ -12,6 +12,7 @@ import android.content.pm.PackageManager
 import android.provider.Settings
 import android.telephony.TelephonyManager
 import androidx.core.app.ActivityCompat
+import io.realm.Realm
 
 class ApplicationKt : Application() {
     val TAG: String? = this.javaClass.simpleName
@@ -28,6 +29,7 @@ class ApplicationKt : Application() {
         super.onCreate()
         pref = getSharedPreferences(getString(R.string.application), Service.MODE_PRIVATE)
         editor = pref!!.edit()
+        Realm.init(this)
     }
 
     /**

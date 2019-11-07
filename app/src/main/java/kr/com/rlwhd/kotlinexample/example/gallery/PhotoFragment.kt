@@ -13,7 +13,6 @@ import kr.com.rlwhd.kotlinexample.R
 
 private const val ARG_URI = "uri"
 class PhotoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var uri: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +45,6 @@ class PhotoFragment : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment PhotoFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(uri: String) =
             PhotoFragment().apply {

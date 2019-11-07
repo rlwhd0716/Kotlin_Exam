@@ -13,6 +13,7 @@ import kr.com.rlwhd.kotlinexample.example.*
 import kr.com.rlwhd.kotlinexample.example.flash.FlashlightActivity
 import kr.com.rlwhd.kotlinexample.example.gallery.MyGalleryActivity
 import kr.com.rlwhd.kotlinexample.example.tilt.TiltSensorActivity
+import kr.com.rlwhd.kotlinexample.example.todo.TodoListActivity
 import kr.com.rlwhd.kotlinexample.kakao.RescueMapActivity
 import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
 import org.jetbrains.anko.startActivity

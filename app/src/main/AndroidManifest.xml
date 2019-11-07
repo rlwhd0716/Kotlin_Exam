@@ -21,7 +21,12 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".TodoListActivity">
+        <activity android:name=".example.todo.EditActivity">
+        </activity>
+        <activity
+                android:name=".example.todo.TodoListActivity"
+                android:label="@string/title_activity_todo_list"
+                android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <receiver android:name=".example.flash.TorchAppWidget">
