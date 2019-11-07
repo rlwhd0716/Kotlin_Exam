@@ -3,6 +3,7 @@ package kr.com.rlwhd.kotlinexample.example
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_fat_calc.*
 import kotlinx.android.synthetic.main.activity_stop_watch.*
 import kr.com.rlwhd.kotlinexample.R
 import java.util.*
@@ -32,13 +33,31 @@ class StopWatchActivity : AppCompatActivity() {
         bt_labtime.setOnClickListener {
             recordLapTime()
         }
+
+        fab_refresh.setOnClickListener {
+            reset()
+        }
     }
+
+    private fun reset() {
+        timerTask?.cancel()
+
+        time = 0
+        isRunning = false
+        fab_play.setImageResource(R.drawable.ic_play_arrow_black_24dp)
+        tv_second.text = "0"
+        tv_millis.text = "0"
+
+        ll_labtime.removeAllViews()
+        lap = 1
+    }
+
     private fun recordLapTime() {
         val lapTime = this.time
         val textView = TextView(this)
         textView.text = "$lap LAB : ${lapTime / 100}.${lapTime % 100}"
 
-        sv_labtime.addView(textView, 0)
+        ll_labtime.addView(textView, 0)
         lap++
     }
 

@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mqtt.RescueMapActivity">
+        tools:context=".kakao.RescueMapActivity">
 
     <androidx.constraintlayout.widget.Guideline
             android:orientation="vertical"
@@ -68,9 +68,6 @@
             <TextView
                     style="@style/RescueMap.TextView"
                     android:text="@string/SpO2"/>
-            <TextView
-                    style="@style/RescueMap.TextView"
-                    android:text="@string/blood_sugar"/>
         </LinearLayout>
 
         <LinearLayout
@@ -97,10 +94,6 @@
                     android:id="@+id/tv_SpO2"
                     style="@style/RescueMap.TextView"
                     android:text="@string/SpO2"/>
-            <TextView
-                    android:id="@+id/tv_blood_sugar"
-                    style="@style/RescueMap.TextView"
-                    android:text="@string/blood_sugar"/>
         </LinearLayout>
 
     </LinearLayout>

@@ -1,4 +1,4 @@
-package kr.com.rlwhd.kotlinexample.example
+package kr.com.rlwhd.kotlinexample.example.tilt
 
 import android.content.Context
 import android.content.pm.ActivityInfo
@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
-import kr.com.rlwhd.kotlinexample.R
 
 class TiltSensorActivity : AppCompatActivity(), SensorEventListener {
     private val TAG: String = this.javaClass.simpleName

@@ -5,6 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_fat_calc.*
 import kr.com.rlwhd.kotlinexample.R
 import org.jetbrains.anko.toast
+import kotlin.math.pow
 
 class FatCalcActivity : AppCompatActivity() {
     private var height = 0
@@ -19,7 +20,7 @@ class FatCalcActivity : AppCompatActivity() {
             height = et_height.text.toString().toInt()
             weight = et_weight.text.toString().toInt()
 
-            bmi = (weight / Math.pow(height / 100.0, 2.0))
+            bmi = (weight / (height / 100.0).pow(2.0))
 
             bmiLevel(bmi)
             bmiResult(bmi)
@@ -27,7 +28,7 @@ class FatCalcActivity : AppCompatActivity() {
         }
     }
 
-    private fun bmiLevel(bmi: Double) {
+    private fun bmiLevel(bmi: Double){
         when {
             bmi >= 35 -> tv_result.text = "고도비만"
             bmi >= 30 -> tv_result.text = "2단계비만"

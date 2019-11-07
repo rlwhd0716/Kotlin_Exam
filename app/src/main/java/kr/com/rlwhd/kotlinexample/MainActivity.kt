@@ -10,7 +10,10 @@ import androidx.core.app.ActivityCompat
 import com.kakao.util.maps.helper.Utility
 import kotlinx.android.synthetic.main.activity_main.*
 import kr.com.rlwhd.kotlinexample.example.*
-import kr.com.rlwhd.kotlinexample.mqtt.RescueMapActivity
+import kr.com.rlwhd.kotlinexample.example.flash.FlashlightActivity
+import kr.com.rlwhd.kotlinexample.example.gallery.MyGalleryActivity
+import kr.com.rlwhd.kotlinexample.example.tilt.TiltSensorActivity
+import kr.com.rlwhd.kotlinexample.kakao.RescueMapActivity
 import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
 import org.jetbrains.anko.startActivity
 
@@ -73,6 +76,22 @@ class MainActivity : AppCompatActivity() {
 
         bt_kakao_map.setOnClickListener {
             startActivity<RescueMapActivity>()
+        }
+
+        bt_gallery.setOnClickListener {
+            startActivity<MyGalleryActivity>()
+        }
+
+        bt_clap369.setOnClickListener {
+            startActivity<GameActivity>()
+        }
+
+            bt_flashlight.setOnClickListener {
+            startActivity<FlashlightActivity>()
+        }
+
+        bt_example.setOnClickListener {
+            startActivity<TodoListActivity>()
         }
     }
 
