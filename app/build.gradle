@@ -10,10 +10,11 @@ apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 28
-    buildToolsVersion "29.0.1"
+    buildToolsVersion "29.0.2"
+
     defaultConfig {
         applicationId "kr.com.rlwhd.kotlinexample"
-        minSdkVersion 28
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -29,12 +30,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // 라이브러리
+    // jar 라이브러리
+    // 유튜브
     implementation files('libs\\YouTubeAndroidPlayerApi.jar')
 
     // kotlin
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.core:core-ktx:1.0.2'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.anko:anko:$anko_version"
 
@@ -51,7 +53,12 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.github.bumptech.glide:glide:4.10.0'
 
+    // tedpermission - 퍼미션 라이브러리
+    implementation "gun0912.ted:tedpermission:2.1.0"
+
+    // realm - db 라이브러리
     implementation 'io.realm:android-adapters:2.1.1'
 
-
+    // 로티 - 애니메이션 라이브러리
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }

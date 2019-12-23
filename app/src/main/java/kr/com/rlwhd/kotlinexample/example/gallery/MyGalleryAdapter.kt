@@ -1,10 +1,10 @@
-package kr.com.rlwhd.kotlinexample.adapter
+package kr.com.rlwhd.kotlinexample.example.gallery
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
-class MyGalleryAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm) {
+class MyGalleryAdapter(fm: FragmentManager?) : FragmentStatePagerAdapter(fm!!) {
     private val items = ArrayList<Fragment>()
 
     override fun getItem(position: Int): Fragment {

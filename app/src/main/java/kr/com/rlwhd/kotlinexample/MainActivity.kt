@@ -16,6 +16,7 @@ import kr.com.rlwhd.kotlinexample.example.tilt.TiltSensorActivity
 import kr.com.rlwhd.kotlinexample.example.todo.TodoListActivity
 import kr.com.rlwhd.kotlinexample.kakao.RescueMapActivity
 import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
+import kr.com.rlwhd.kotlinexample.mvp.MvpActivity
 import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
@@ -93,6 +94,14 @@ class MainActivity : AppCompatActivity() {
 
         bt_example.setOnClickListener {
             startActivity<TodoListActivity>()
+        }
+
+        bt_get_photo_camera.setOnClickListener {
+            startActivity<GetImageActivity>()
+        }
+
+        bt_mvp_exam.setOnClickListener {
+            startActivity<MvpActivity>()
         }
     }
 

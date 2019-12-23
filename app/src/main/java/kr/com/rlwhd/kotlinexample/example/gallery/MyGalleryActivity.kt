@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_my_gallery.*
 import kr.com.rlwhd.kotlinexample.R
-import kr.com.rlwhd.kotlinexample.adapter.MyGalleryAdapter
 import org.jetbrains.anko.alert
 import org.jetbrains.anko.noButton
 import org.jetbrains.anko.toast
