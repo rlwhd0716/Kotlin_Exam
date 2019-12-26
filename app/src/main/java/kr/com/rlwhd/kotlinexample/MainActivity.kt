@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.kakao.util.maps.helper.Utility
 import kotlinx.android.synthetic.main.activity_main.*
+import kr.com.rlwhd.kotlinexample.dagger.DaggerActivity
 import kr.com.rlwhd.kotlinexample.example.*
 import kr.com.rlwhd.kotlinexample.example.flash.FlashlightActivity
 import kr.com.rlwhd.kotlinexample.example.gallery.MyGalleryActivity
@@ -102,6 +103,10 @@ class MainActivity : AppCompatActivity() {
 
         bt_mvp_exam.setOnClickListener {
             startActivity<MvpActivity>()
+        }
+
+        bt_dagger_exam.setOnClickListener {
+            startActivity<DaggerActivity>()
         }
     }
 

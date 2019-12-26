@@ -24,7 +24,7 @@ class KeyHash {
 
                 return Base64.encodeToString(md.digest(), Base64.NO_WRAP)
             } catch (e: NoSuchAlgorithmException) {
-                Log.e(TAG, "디버그 keyHash$signature", e)
+                Log.e(TAG, "디버그 keyHash$signature $e")
             }
 
         }

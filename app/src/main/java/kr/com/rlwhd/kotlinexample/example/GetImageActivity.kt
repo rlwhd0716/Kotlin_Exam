@@ -56,7 +56,7 @@ class GetImageActivity : AppCompatActivity(), PermissionListener {
             lav_anim.playAnimation()
         }
 //        lav_anim.loop(true)
-        lav_anim.addAnimatorListener(object : Animator.AnimatorListener{
+        lav_anim.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
             }
 
@@ -73,6 +73,7 @@ class GetImageActivity : AppCompatActivity(), PermissionListener {
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
         if (resultCode != Activity.RESULT_OK) {
 
             toast("취소 되었습니다.")

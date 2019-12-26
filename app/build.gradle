@@ -61,4 +61,8 @@ dependencies {
 
     // 로티 - 애니메이션 라이브러리
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    // dagger2
+    implementation "com.google.dagger:dagger:$dagger2_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger2_version"
 }

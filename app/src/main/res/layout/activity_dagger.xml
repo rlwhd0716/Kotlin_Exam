@@ -7,4 +7,36 @@
         android:layout_height="match_parent"
         tools:context=".dagger.DaggerActivity">
 
+
+    <TextView
+            android:id="@+id/tv_daager_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:text="동물이름"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+            android:id="@+id/bt_cat_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_daager_test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/bt_dog_name"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+            android:id="@+id/bt_dog_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dog"
+            app:layout_constraintTop_toBottomOf="@+id/tv_daager_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bt_cat_name"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
