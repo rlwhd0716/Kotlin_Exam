@@ -1,8 +1,8 @@
-package kr.com.rlwhd.kotlinexample.dagger
+package kr.com.rlwhd.kotlinexample.dgmvp.dagger
 
 import dagger.Component
-import kr.com.rlwhd.kotlinexample.dagger.module.CatModule
-import kr.com.rlwhd.kotlinexample.dagger.module.DogModule
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.module.CatModule
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.module.DogModule
 import javax.inject.Singleton
 
 @Singleton

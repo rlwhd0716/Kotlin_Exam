@@ -13,6 +13,11 @@ import android.provider.Settings
 import android.telephony.TelephonyManager
 import androidx.core.app.ActivityCompat
 import io.realm.Realm
+import kr.com.rlwhd.kotlinexample.dgmvp.di.component.AppComponent
+import kr.com.rlwhd.kotlinexample.dgmvp.di.component.DaggerAppComponent
+import kr.com.rlwhd.kotlinexample.dgmvp.di.module.AppModule
+import kr.com.rlwhd.kotlinexample.dgmvp.di.module.NetworkModule
+import kr.com.rlwhd.kotlinexample.dgmvp.di.module.PreferenceModule
 
 class ApplicationKt : Application() {
     val TAG: String? = this.javaClass.simpleName
@@ -23,6 +28,13 @@ class ApplicationKt : Application() {
     private var mProgressDialog: ProgressDialog? = null
     private val mTelephonyManager: TelephonyManager? = null
 
+    val singleton: AppComponent by lazy {
+        DaggerAppComponent.builder()
+            .networkModule(NetworkModule())
+            .preferenceModule(PreferenceModule())
+            .appModule(AppModule(this))
+            .build()
+    }
 
     @SuppressLint("CommitPrefEdits")
     override fun onCreate() {
@@ -30,6 +42,12 @@ class ApplicationKt : Application() {
         pref = getSharedPreferences(getString(R.string.application), Service.MODE_PRIVATE)
         editor = pref!!.edit()
         Realm.init(this)
+    }
+
+    companion object {
+        fun getAppComponent(context: Context): AppComponent {
+            return (context.applicationContext as ApplicationKt).singleton
+        }
     }
 
     /**
@@ -42,7 +60,8 @@ class ApplicationKt : Application() {
                 this,
                 Manifest.permission.READ_PHONE_STATE
             ) !== PackageManager.PERMISSION_GRANTED
-        ){}
+        ) {
+        }
         return Settings.Secure.getString(applicationContext.contentResolver, Settings.Secure.ANDROID_ID)
     }
 

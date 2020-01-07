@@ -23,9 +23,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".dagger.DaggerActivity">
+        <activity android:name="kr.com.rlwhd.kotlinexample.dgmvp.dagger.DaggerActivity">
         </activity>
-        <activity android:name=".mvp.MvpActivity">
+        <activity android:name="kr.com.rlwhd.kotlinexample.dgmvp.mvp.MvpActivity">
         </activity>
         <activity android:name=".network.test.TestActivity">
         </activity>

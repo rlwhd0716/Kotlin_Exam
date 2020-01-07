@@ -1,9 +1,7 @@
-package kr.com.rlwhd.kotlinexample
+package kr.com.rlwhd.kotlinexample.util
 
 import android.content.Context
-import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
-import android.content.pm.Signature
 import android.util.Base64
 import android.util.Log
 import com.kakao.util.maps.helper.Utility

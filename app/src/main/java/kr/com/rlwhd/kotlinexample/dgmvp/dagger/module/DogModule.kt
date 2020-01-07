@@ -1,8 +1,8 @@
-package kr.com.rlwhd.kotlinexample.dagger.module
+package kr.com.rlwhd.kotlinexample.dgmvp.dagger.module
 
 import dagger.Module
 import dagger.Provides
-import kr.com.rlwhd.kotlinexample.dagger.model.Dog
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.model.Dog
 
 @Module
 object DogModule {

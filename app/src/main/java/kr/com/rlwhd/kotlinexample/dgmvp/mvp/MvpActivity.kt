@@ -1,4 +1,4 @@
-package kr.com.rlwhd.kotlinexample.mvp
+package kr.com.rlwhd.kotlinexample.dgmvp.mvp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

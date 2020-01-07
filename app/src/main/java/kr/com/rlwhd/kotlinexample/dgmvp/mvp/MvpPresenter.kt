@@ -1,4 +1,4 @@
-package kr.com.rlwhd.kotlinexample.mvp
+package kr.com.rlwhd.kotlinexample.dgmvp.mvp
 
 class MvpPresenter(view: MvpConstants.View): MvpConstants.Presenter {
     private val mainView: MvpConstants.View = view

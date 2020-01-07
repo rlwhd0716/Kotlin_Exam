@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.kakao.util.maps.helper.Utility
 import kotlinx.android.synthetic.main.activity_main.*
-import kr.com.rlwhd.kotlinexample.dagger.DaggerActivity
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.DaggerActivity
 import kr.com.rlwhd.kotlinexample.example.*
 import kr.com.rlwhd.kotlinexample.example.flash.FlashlightActivity
 import kr.com.rlwhd.kotlinexample.example.gallery.MyGalleryActivity
@@ -17,10 +17,10 @@ import kr.com.rlwhd.kotlinexample.example.tilt.TiltSensorActivity
 import kr.com.rlwhd.kotlinexample.example.todo.TodoListActivity
 import kr.com.rlwhd.kotlinexample.kakao.RescueMapActivity
 import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
-import kr.com.rlwhd.kotlinexample.mvp.MvpActivity
+import kr.com.rlwhd.kotlinexample.dgmvp.mvp.MvpActivity
 import org.jetbrains.anko.startActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
     private val TAG: String = this.javaClass.simpleName
 
     var str: String = "버튼을 눌렀습니다."
@@ -53,15 +53,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onClickEvent() {
-        bt_change.setOnClickListener {
-            dog.run("강아지")
-            textView.text = dog.name
-            Log.e("111", "")
-        }
+//        bt_change.setOnClickListener {
+//            dog.run("강아지")
+//            textView.text = dog.name
+//            Log.e("111", "")
+//        }
 
-        bt_fat.setOnClickListener {
-            startActivity<FatCalcActivity>()
-        }
+//        bt_fat.setOnClickListener {
+//            startActivity<FatCalcActivity>()
+//        }
 
         bt_stopwatch.setOnClickListener {
             startActivity<StopWatchActivity>()
@@ -107,6 +107,19 @@ class MainActivity : AppCompatActivity() {
 
         bt_dagger_exam.setOnClickListener {
             startActivity<DaggerActivity>()
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when(v?.id) {
+            bt_change.id -> {
+                dog.run("강아지")
+                textView.text = dog.name
+                Log.e("111", "")
+            }
+            bt_fat.id -> startActivity<FatCalcActivity>()
+
+
         }
     }
 

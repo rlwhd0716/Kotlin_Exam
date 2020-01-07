@@ -1,4 +1,4 @@
-package kr.com.rlwhd.kotlinexample
+package kr.com.rlwhd.kotlinexample.util
 
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer

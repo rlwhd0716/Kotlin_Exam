@@ -5,29 +5,32 @@ import android.content.Context
 import android.util.Log
 import kr.com.rlwhd.kotlinexample.adapter.MqttMessageAdapter
 import kr.com.rlwhd.kotlinexample.data.MqttData
+import kr.com.rlwhd.kotlinexample.kakao.MqttVital
 import org.eclipse.paho.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
 
 
-class MosquittoMqtt(c: Context, activity: Activity) {
+class MosquittoMqtt(c: Context, activity: Activity, val mqttVital: MqttVital?) {
     private val TAG: String? = this.javaClass.simpleName
 
     // 2번째 파라메터 : 브로커의 ip 주소 , 3번째 파라메터 : client 의 id를 지정함 여기서는 paho 의 자동으로 id를 만들어주는것
-    val mqttAndroidClient = MqttAndroidClient(c, "IP" + ":Port", MqttClient.generateClientId())
-    private var mqttData : MqttData ?= null
+    val mqttAndroidClient = MqttAndroidClient(c, "tcp://" + "IP" + "port", MqttClient.generateClientId())
+    private var mqttData: MqttData? = null
     private var msgList = arrayListOf<MqttData>()
     val mAdapter = MqttMessageAdapter(activity, msgList)
 
     fun initMqtt() {
         try {
-            val token = mqttAndroidClient.connect(getMqttConnectionOption())    //mqtttoken 이라는것을 만들어 connect option을 달아줌
+            val token =
+                mqttAndroidClient.connect(getMqttConnectionOption())    //mqtttoken 이라는것을 만들어 connect option을 달아줌
             token.actionCallback = object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken) {
                     mqttAndroidClient.setBufferOpts(getDisconnectedBufferOptions())    //연결에 성공한경우
                     Log.e("Connect_success", "Success")
 
                     try {
-                        mqttAndroidClient.subscribe("/TEST", 0)   //연결에 성공하면 /TEST 라는 토픽으로 subscribe함
+//                        mqttAndroidClient.subscribe("/TEST", 0)   //연결에 성공하면 /TEST 라는 토픽으로 subscribe함
+                        mqttAndroidClient.subscribe("topic", 0)   //연결에 성공하면 /TEST 라는 토픽으로 subscribe함
                     } catch (e: MqttException) {
                         Log.e(TAG, "subscribe Error - $e")
                     }
@@ -52,15 +55,17 @@ class MosquittoMqtt(c: Context, activity: Activity) {
 
             @Throws(Exception::class)
             override fun messageArrived(topic: String, message: MqttMessage) {    //모든 메시지가 올때 Callback method
-                if (topic == "/TEST") {     //topic 별로 분기처리하여 작업을 수행할수도있음
-                    val msg = String(message.payload)
+//                if (topic == "/TEST") {     //topic 별로 분기처리하여 작업을 수행할수도있음
+                val msg = String(message.payload)
 
-                    mqttData = MqttData(msg)
-                    msgList.add(0, mqttData!!)
-                    mAdapter.notifyDataSetChanged()
+                mqttData = MqttData(msg)
+                msgList.add(0, mqttData!!)
+                mAdapter.notifyDataSetChanged()
 
-                    Log.e("arri0ve message : ", msg)
-                }
+                Log.e("arri0ve message : ", msg)
+//                }
+
+//                getVital(topic, message)
             }
 
             override fun deliveryComplete(token: IMqttDeliveryToken) {
@@ -68,6 +73,8 @@ class MosquittoMqtt(c: Context, activity: Activity) {
             }
         })
     }
+
+
 
     private fun getDisconnectedBufferOptions(): DisconnectedBufferOptions {
         val disconnectedBufferOptions = DisconnectedBufferOptions()
@@ -77,7 +84,6 @@ class MosquittoMqtt(c: Context, activity: Activity) {
         disconnectedBufferOptions.isDeleteOldestMessages = false
         return disconnectedBufferOptions
     }
-
 
     private fun getMqttConnectionOption(): MqttConnectOptions {
         val mqttConnectOptions = MqttConnectOptions()

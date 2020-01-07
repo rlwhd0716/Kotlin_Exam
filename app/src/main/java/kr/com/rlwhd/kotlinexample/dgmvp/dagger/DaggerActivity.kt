@@ -1,13 +1,13 @@
-package kr.com.rlwhd.kotlinexample.dagger
+package kr.com.rlwhd.kotlinexample.dgmvp.dagger
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_dagger.*
 import kr.com.rlwhd.kotlinexample.R
-import kr.com.rlwhd.kotlinexample.dagger.model.Cat
-import kr.com.rlwhd.kotlinexample.dagger.model.Dog
-import kr.com.rlwhd.kotlinexample.dagger.module.CatModule
-import kr.com.rlwhd.kotlinexample.dagger.module.DogModule
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.model.Cat
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.model.Dog
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.module.CatModule
+import kr.com.rlwhd.kotlinexample.dgmvp.dagger.module.DogModule
 import javax.inject.Inject
 
 class DaggerActivity : AppCompatActivity() {

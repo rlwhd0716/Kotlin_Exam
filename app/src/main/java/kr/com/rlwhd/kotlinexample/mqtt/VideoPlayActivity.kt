@@ -16,13 +16,12 @@ class VideoPlayActivity : AppCompatActivity() {
 
     private lateinit var mApplicationKt: ApplicationKt
     private var mosquittoMqtt : MosquittoMqtt ?= null
-    //    private var msgList = arrayListOf<MqttData>(MqttData("나오나?"), MqttData("잘돼??"))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_video_play)
         mApplicationKt = application as ApplicationKt
-        mosquittoMqtt = MosquittoMqtt(this, this)
+        mosquittoMqtt = MosquittoMqtt(this, this, null)
 
         videoPlayer()
         rv_message_video.adapter = mosquittoMqtt?.mAdapter

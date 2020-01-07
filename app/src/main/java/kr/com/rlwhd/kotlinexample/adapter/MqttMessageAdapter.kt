@@ -20,7 +20,7 @@ class MqttMessageAdapter(val context: Context, val msgList: ArrayList<MqttData>)
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        holder?.bind(msgList[position], context)
+        holder.bind(msgList[position], context)
     }
 
     inner class Holder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
