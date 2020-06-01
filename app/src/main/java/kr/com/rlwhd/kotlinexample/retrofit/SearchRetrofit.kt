@@ -82,9 +82,9 @@ object SearchRetrofit {
     fun service_GisMainIc(IMEI: String, LOGIN_CAR_ID: String) {
         var mJsonArrayCallback = JsonArrayCallback()
         val body = JsonObject()
-        body.addProperty("SERVICE_NM", "GisMainIc")
-        body.addProperty("IMEI", IMEI)
-        body.addProperty("LOGIN_CAR_ID", LOGIN_CAR_ID)
+        body.addProperty("", "")
+        body.addProperty("", IMEI)
+        body.addProperty("", LOGIN_CAR_ID)
         Log.e(TAG, "body = $body")
         getTestService().call_GisMainIc(params = body)
             .enqueue(mJsonArrayCallback)

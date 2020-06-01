@@ -20,7 +20,7 @@ class RetrofitTestActivity : AppCompatActivity() {
 
         mApplicationKt = application as ApplicationKt
 
-        retrofit.service_GisMainIc(mApplicationKt.getIMEI(), "1000000704")
+        retrofit.service_GisMainIc(mApplicationKt.getIMEI(), "")
         bt_retrofit_call.setOnClickListener {
             for (i in mJsonArrayCallback.getServiceData()) {
                 Log.e(TAG, mJsonArrayCallback.getServiceData().toString())
