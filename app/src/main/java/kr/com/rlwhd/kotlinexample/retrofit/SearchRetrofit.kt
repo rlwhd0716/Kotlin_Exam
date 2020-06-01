@@ -71,7 +71,7 @@ object SearchRetrofit {
 
     private val testRetrofit =
         Retrofit.Builder()//TODO
-            .baseUrl("http://59.25.178.90:12000/ANAVL/")
+            .baseUrl("")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
