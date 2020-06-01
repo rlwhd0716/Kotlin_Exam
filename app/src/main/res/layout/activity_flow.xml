@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:flow_horizontalGap="8dp"
+            app:flow_horizontalStyle="packed"
+            app:flow_wrapMode="aligned"
+            app:flow_maxElementsWrap="4"
+            app:constraint_referenced_ids="bt_flow1, bt_flow2, bt_flow3, bt_flow4, bt_flow5, bt_flow6, bt_flow7, bt_flow8, bt_flow9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_flow10"/>
+
+    <Button
+            android:id="@+id/bt_flow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼1"/>
+
+    <Button
+            android:id="@+id/bt_flow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼2"/>
+
+    <Button
+            android:id="@+id/bt_flow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼3"/>
+
+    <Button
+            android:id="@+id/bt_flow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼4"/>
+
+    <Button
+            android:id="@+id/bt_flow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼5"/>
+
+    <Button
+            android:id="@+id/bt_flow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼6"/>
+
+    <Button
+            android:id="@+id/bt_flow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼7"/>
+
+    <Button
+            android:id="@+id/bt_flow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼8"/>
+
+    <Button
+            android:id="@+id/bt_flow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼9"/>
+
+    <Button
+            android:id="@+id/bt_flow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="버튼10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/flow"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

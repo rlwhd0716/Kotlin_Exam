@@ -7,7 +7,6 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'realm-android'
 
 
-
 android {
     compileSdkVersion 28
     buildToolsVersion "29.0.2"
@@ -26,8 +25,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
-    kapt{
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kapt {
         generateStubs = true
     }
 }
@@ -37,24 +39,29 @@ dependencies {
     // jar 라이브러리
     // 유튜브
     implementation files('libs\\YouTubeAndroidPlayerApi.jar')
+    // kakao Map
+    implementation files('src\\main\\jniLibs\\libDaumMapAndroid.jar')
 
     // kotlin / android
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.core:core-ktx:1.3.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.anko:anko:$anko_version"
 
+    //room DB
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
     // support
     implementation "com.android.support:recyclerview-v7:$supportLibVersion"
     implementation "com.android.support:design:$supportLibVersion"
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta6'
+    implementation 'com.google.android.material:material:1.1.0'
 
     // mqtt
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.2'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-    implementation files('src\\main\\jniLibs\\libDaumMapAndroid.jar')
     implementation 'com.github.bumptech.glide:glide:4.10.0'
 
     // tedpermission - 퍼미션 라이브러리
@@ -72,6 +79,7 @@ dependencies {
     compileOnly 'javax.annotation:jsr250-api:1.0'
 
     // retrofit
+    implementation 'com.google.code.gson:gson:2.8.5'
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
@@ -80,4 +88,11 @@ dependencies {
 
     // square
     implementation 'com.squareup.flow:flow:1.0.0-alpha3'
+
+    // admob
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation project(path: ':openCVLibrary')
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'com.github.mayuce:AndroidDocumentScanner:1.5.2'
 }

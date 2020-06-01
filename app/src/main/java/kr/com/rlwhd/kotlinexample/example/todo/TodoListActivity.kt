@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_todo_list.*
 import kotlinx.android.synthetic.main.content_todo_list.*
 import kr.com.rlwhd.kotlinexample.R
 import kr.com.rlwhd.kotlinexample.data.TodoData
+import kr.com.rlwhd.kotlinexample.scanner.ScannerActivity
 import org.jetbrains.anko.startActivity
 
 class TodoListActivity : AppCompatActivity() {
@@ -33,7 +34,7 @@ class TodoListActivity : AppCompatActivity() {
 
         // 새 할 일 추가
         fab_todo_add.setOnClickListener {
-            startActivity<EditActivity>()
+            startActivity<ScannerActivity>()
         }
     }
 

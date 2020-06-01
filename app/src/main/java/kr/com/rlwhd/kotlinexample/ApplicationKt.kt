@@ -50,10 +50,6 @@ class ApplicationKt : Application() {
         }
     }
 
-    /**
-     * GET IMEI
-     * Created by Jongsuuu on 2019-06-10
-     */
     @SuppressLint("HardwareIds")
     fun getIMEI(): String {
         if (ActivityCompat.checkSelfPermission(

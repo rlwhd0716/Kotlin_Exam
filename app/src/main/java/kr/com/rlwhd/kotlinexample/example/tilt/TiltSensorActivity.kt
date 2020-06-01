@@ -6,10 +6,12 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 class TiltSensorActivity : AppCompatActivity(), SensorEventListener {
     private val TAG: String = this.javaClass.simpleName
@@ -20,9 +22,11 @@ class TiltSensorActivity : AppCompatActivity(), SensorEventListener {
 
     override fun onResume() {
         super.onResume()
-        sensorManager.registerListener(this,
+        sensorManager.registerListener(
+            this,
             sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-            SensorManager.SENSOR_DELAY_NORMAL)
+            SensorManager.SENSOR_DELAY_NORMAL
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +47,13 @@ class TiltSensorActivity : AppCompatActivity(), SensorEventListener {
         event?.let {
             Log.d(TAG, "onSensorChanged - x : ${event.values[0]}, y : ${event.values[1]}, z : ${event.values[2]}")
 
+            Log.e(
+                TAG, "평균 - ${sqrt(
+                    event.values[0].toDouble().pow(2.toDouble()) +
+                            event.values[1].toDouble().pow(2.toDouble()) +
+                            event.values[2].toDouble().pow(2.toDouble())
+                )}"
+            )
             tiltView.onSensorEvent(event)
         }
     }
