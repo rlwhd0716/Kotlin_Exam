@@ -20,6 +20,7 @@ import kr.com.rlwhd.kotlinexample.kakao.RescueMapActivity
 import kr.com.rlwhd.kotlinexample.mqtt.VideoPlayActivity
 import kr.com.rlwhd.kotlinexample.retrofit.RetrofitService
 import kr.com.rlwhd.kotlinexample.retrofit.SearchRetrofit
+import kr.com.rlwhd.kotlinexample.scanner.ScannerListActivity
 import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
@@ -71,20 +72,12 @@ class MainActivity : AppCompatActivity() {
         bt_dagger_exam.setOnClickListener(onClickListener)
         bt_ad_exam.setOnClickListener(onClickListener)
         bt_retrofit_exam.setOnClickListener(onClickListener)
+        bt_scanner_exam.setOnClickListener(onClickListener)
     }
 
     private var onClickListener = View.OnClickListener { v ->
         when (v.id) {
-            R.id.bt_change -> {
-                if (textView.text === "강아지") {
-                    textView.text = animal.name
-                    Log.e("111", "name = ${animal.name}")
-                } else {
-                    dog.run("강아지")
-                    textView.text = dog.name
-                    Log.e("111", "name = ${dog.name}")
-                }
-            }
+            R.id.bt_change -> changeAnimal()
             R.id.bt_fat -> startActivity<FatCalcActivity>()
             R.id.bt_stopwatch -> startActivity<StopWatchActivity>()
             R.id.bt_tilt -> startActivity<TiltSensorActivity>()
@@ -99,8 +92,19 @@ class MainActivity : AppCompatActivity() {
             R.id.bt_dagger_exam -> startActivity<DaggerActivity>()
             R.id.bt_ad_exam -> startActivity<AdmobActivity>()
             R.id.bt_retrofit_exam -> startActivity<RetrofitTestActivity>()
-            else -> {
-            }
+            R.id.bt_scanner_exam -> startActivity<ScannerListActivity>()
+            else -> return@OnClickListener
+        }
+    }
+
+    private fun changeAnimal() {
+        if (textView.text === "강아지") {
+            textView.text = animal.name
+            Log.e("111", "name = ${animal.name}")
+        } else {
+            dog.run("강아지")
+            textView.text = dog.name
+            Log.e("111", "name = ${dog.name}")
         }
     }
 

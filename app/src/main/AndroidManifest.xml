@@ -41,6 +41,10 @@
                 android:name=".example.todo.TodoListActivity"
                 android:label="@string/title_activity_todo_list"
                 android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".scanner.ScannerListActivity"
+            android:label="@string/title_activity_scanner_list"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
         <receiver android:name=".example.flash.TorchAppWidget">
             <intent-filter>
