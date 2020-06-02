@@ -1,7 +1,10 @@
 package kr.com.rlwhd.kotlinexample.scanner
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.labters.documentscanner.ImageCropActivity
+import com.labters.documentscanner.helpers.ScannerConstants
 import io.realm.Realm
 import io.realm.Sort
 import io.realm.kotlin.where
@@ -31,8 +34,11 @@ class ScannerListActivity : AppCompatActivity() {
 
         lv_todo_list.setOnItemClickListener { parent, view, position, id ->
             // 할 일 수정
-            startActivity<EditActivity>("id" to id)
+//            startActivity<EditActivity>("id" to id)
         }
+
+//        ScannerConstants.selectedImageBitmap = btimap
+//        startActivityForResult(Intent(MainActivity@this, ImageCropActivity::class.java),Constants.REQUEST_CROP)
 
         // 새 할 일 추가
         fab_todo_add.setOnClickListener {
@@ -44,5 +50,7 @@ class ScannerListActivity : AppCompatActivity() {
         super.onDestroy()
         realm.close()
     }
+
+    
 
 }
